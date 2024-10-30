@@ -21,6 +21,7 @@ const equal = document.querySelector("#equal");
 let firstNumber = false;
 let secondNumber = false;
 let switchOne = false; // becomes true when a result of an operation is on display
+let switchSymbol = false; //becomes true to prevent writing more than 1 "+/-" symbol
 let switchPoint = false; // becomes true to prevent writing more than 1 point
 // setTimeOut property simulates display flashing whenever you press a button
 display.textContent = "0";
@@ -42,7 +43,6 @@ function operate(a,b){
     return Math.round((a/b)*100)/100;
   }
 }
-
 
 ac.addEventListener("click",(e)=>{
   display.textContent = "0";
@@ -67,10 +67,29 @@ backspace.addEventListener("click",(e)=>{
 });
 
 sign.addEventListener("click",(e)=>{
-  if(switchOne==false
-    &&display.textContent!="too big :)"
-    &&display.textContent!="ERROR"){
-    display.textContent = "-" + display.textContent;
+//this button turns the value on the screen into a negative or positive  
+  if(switchSymbol==false){
+    if(switchOne==false){
+      if(display.textContent=="0"||
+        display.textContent=="too big :)"||
+        display.textContent=="ERROR"){
+        display.textContent = "-" + display.textContent;
+      }
+      else if(display.textContent!="0"
+        &&display.textContent.length<8
+        &&display.textContent!="too big :)"
+        &&display.textContent!="ERROR"){
+        display.textContent = "-" + display.textContent;
+      }
+    }
+    else if(switchOne==true){
+      switchOne = false;
+    }
+   switchSymbol = true;
+  }
+  else{
+    let removeSymbol = (Number(display.textContent)*(-1));
+    display.textContent = removeSymbol;
   }
 });
 
@@ -85,7 +104,7 @@ division.addEventListener("click",(e)=>{
     }
     else{
       firstNumber = false;
-       secondNumber = false;
+      secondNumber = false;
       display.textContent="too big :)";
     }
   }
@@ -112,18 +131,49 @@ one.addEventListener("click",(e)=>{
     } 
   }
   else if(switchOne==true){  
-      display.textContent = "1";
-      switchOne = false;      
+    display.textContent = "1";
+    switchOne = false;      
   }
-  
 });
 
 two.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "2";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "2";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "2";
+    switchOne = false;      
+  }
 });
 
 three.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "3";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "3";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "3";
+    switchOne = false;      
+  }
 });
 
 multiplication.addEventListener("click",(e)=>{
@@ -150,15 +200,63 @@ multiplication.addEventListener("click",(e)=>{
 });
 
 four.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "4";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "4";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "4";
+    switchOne = false;      
+  }
 });
 
 five.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "5";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "5";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "5";
+    switchOne = false;      
+  }
 });
 
 six.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "6";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "6";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "6";
+    switchOne = false;      
+  }
 });
 
 sum.addEventListener("click",(e)=>{
@@ -185,15 +283,63 @@ sum.addEventListener("click",(e)=>{
 });
 
 seven.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "7";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "7";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "7";
+    switchOne = false;      
+  }
 });
 
 eight.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "8";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "8";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "8";
+    switchOne = false;      
+  }
 });
 
 nine.addEventListener("click",(e)=>{
-  console.log("hi");
+  if(switchOne==false){
+    if(display.textContent=="0"||
+      display.textContent=="too big :)"||
+      display.textContent=="ERROR"){
+      display.textContent = "9";      
+    }
+    else if(display.textContent!="0"
+      &&display.textContent.length<8
+      &&display.textContent!="too big :)"
+      &&display.textContent!="ERROR"){
+      display.textContent = display.textContent + "9";
+    } 
+  }
+  else if(switchOne==true){  
+    display.textContent = "9";
+    switchOne = false;      
+  }
 });
 
 substraction.addEventListener("click",(e)=>{
