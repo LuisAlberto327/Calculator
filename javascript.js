@@ -24,7 +24,9 @@ let switchOne = false; // becomes true when a result of an operation is on displ
 let switchSymbol = false; //becomes true to prevent writing more than 1 "+/-" symbol
 let switchPoint = false; // becomes true to prevent writing more than 1 point
 // setTimeOut property simulates display flashing whenever you press a button
+let audio = new Audio("beep.mp3");
 display.textContent = "0";
+
 
 
 function operate(a,b){
@@ -50,6 +52,9 @@ ac.addEventListener("click",(e)=>{
   secondNumber = false;
   switchOne = false;
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25)  
+  setTimeout(() => {display.style.color = 'black';}, 50)
+  audio.play();
 });
 
 backspace.addEventListener("click",(e)=>{
@@ -64,6 +69,9 @@ backspace.addEventListener("click",(e)=>{
        display.textContent = "0";
     }
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 sign.addEventListener("click",(e)=>{
@@ -91,6 +99,9 @@ sign.addEventListener("click",(e)=>{
     let removeSymbol = (Number(display.textContent)*(-1));
     display.textContent = removeSymbol;
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 division.addEventListener("click",(e)=>{
@@ -114,6 +125,9 @@ division.addEventListener("click",(e)=>{
   }
   operator = "division";
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 one.addEventListener("click",(e)=>{
@@ -134,6 +148,9 @@ one.addEventListener("click",(e)=>{
     display.textContent = "1";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 two.addEventListener("click",(e)=>{
@@ -154,6 +171,9 @@ two.addEventListener("click",(e)=>{
     display.textContent = "2";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 three.addEventListener("click",(e)=>{
@@ -174,6 +194,9 @@ three.addEventListener("click",(e)=>{
     display.textContent = "3";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 multiplication.addEventListener("click",(e)=>{
@@ -197,6 +220,9 @@ multiplication.addEventListener("click",(e)=>{
   }
   operator = "multiplication";
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 four.addEventListener("click",(e)=>{
@@ -217,6 +243,9 @@ four.addEventListener("click",(e)=>{
     display.textContent = "4";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 five.addEventListener("click",(e)=>{
@@ -237,6 +266,9 @@ five.addEventListener("click",(e)=>{
     display.textContent = "5";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 six.addEventListener("click",(e)=>{
@@ -257,6 +289,9 @@ six.addEventListener("click",(e)=>{
     display.textContent = "6";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 sum.addEventListener("click",(e)=>{
@@ -280,6 +315,9 @@ sum.addEventListener("click",(e)=>{
   }
   operator = "sum";
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 seven.addEventListener("click",(e)=>{
@@ -300,6 +338,9 @@ seven.addEventListener("click",(e)=>{
     display.textContent = "7";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 eight.addEventListener("click",(e)=>{
@@ -320,6 +361,9 @@ eight.addEventListener("click",(e)=>{
     display.textContent = "8";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 nine.addEventListener("click",(e)=>{
@@ -340,6 +384,9 @@ nine.addEventListener("click",(e)=>{
     display.textContent = "9";
     switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 substraction.addEventListener("click",(e)=>{
@@ -363,6 +410,9 @@ substraction.addEventListener("click",(e)=>{
   }
   operator = "substraction";
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 zero.addEventListener("click",(e)=>{
@@ -383,6 +433,9 @@ zero.addEventListener("click",(e)=>{
       display.textContent = "0";
       switchOne = false;      
   }
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 point.addEventListener("click",(e)=>{
@@ -405,7 +458,10 @@ point.addEventListener("click",(e)=>{
       switchOne = false;
     }
   }
-  switchPoint = true; 
+  switchPoint = true;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
 
 equal.addEventListener("click",(e)=>{
@@ -431,4 +487,7 @@ equal.addEventListener("click",(e)=>{
     secondNumber = false;
   }
   switchPoint = false;
+  setTimeout(() => {display.style.color = 'white';}, 25);
+  setTimeout(() => {display.style.color = 'black';}, 50);
+  audio.play();
 });
